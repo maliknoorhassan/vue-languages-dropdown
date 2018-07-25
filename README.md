@@ -49,5 +49,5 @@ as shown in above example.
 
 #Screenshot
 
-![alt text](https://github.com/beyondplus/flags-dropdown-vue/raw/master/raw/world-flags.png "World Languages Dropdown")
+![alt text](https://github.com/maliknoorhassan/vue-languages-dropdown/blob/master/src/assets/images/sample-screenshot.png "World Languages Dropdown")
 
