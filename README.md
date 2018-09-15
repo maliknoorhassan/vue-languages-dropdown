@@ -2,6 +2,11 @@
 
 > Vue2 Languages dropdown component with search 
 
+
+![alt text](https://github.com/maliknoorhassan/vue-languages-dropdown/blob/master/src/assets/images/sample-screenshot-1.png "World Languages Dropdown")
+
+![alt text](https://github.com/maliknoorhassan/vue-languages-dropdown/blob/master/src/assets/images/sample-screenshot-2.png "World Languages Dropdown")
+
 ## Installation
 
 ``` bash
@@ -47,7 +52,4 @@ v-on:change="yourMethodName"
 ```
 as shown in above example.
 
-# Screenshot
-
-![alt text](https://github.com/maliknoorhassan/vue-languages-dropdown/blob/master/src/assets/images/sample-screenshot.png "World Languages Dropdown")
 

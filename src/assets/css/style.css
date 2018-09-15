@@ -116,3 +116,50 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #AAA; 
 }
+
+/*FOR FLAGS*/
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper-box {
+  width: 42px; 
+  overflow: hidden; 
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.scroll-btn
+{
+  width: 16px;
+  float: left;
+  margin-right: 6px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  color: black;
+}
+.scroll-btn:hover
+{
+  background: #4f4b4b;
+  border-radius: 50%;
+}
+.float-left
+{
+  float: left;
+}
+.float-right
+{
+  float: right;
+}
+.right-container
+{
+  width: 87px;float: right;margin-left: 5px;
+}
+
+.mr-5
+{
+  margin-right: 5px;
+}
