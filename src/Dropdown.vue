@@ -1,24 +1,37 @@
 <template>
   <div>
   
-   <div class="dropdown">
-    <button v-on:click="toggle" class="dropbtn"><i v-bind:class="'flag flag-'+selectFlag"></i> {{selectedLang}}</button>
+     <div class="dropdown">
+    <button v-on:click="toggle" class="dropbtn" :style="mapCustomCss">
+        <div class="selected-lang-text">
+            <i v-bind:class="'flag flag-'+selectFlag"></i> {{selectedLang}}
+        </div>
+    </button>
     <input type="search" placeholder="Search.." class="search-input" ref="searchInput" v-model="search" autocomplete="off" v-bind:class="{show : isOpen}" v-if="this.showSearchInput">
     <div id="myDropdown" class="dropdown-content" v-bind:class="{show : isOpen, hide : !isOpen}" style="overflow-x: hidden;">
 
       <div class="wrapper">
 
-      <a v-for="(c,i) in filteredLanguages" style="width: 100%" v-on:click="onLanguageChange(c.code,c.name,c.nativeName,c.countries)">
-        <div  class="float-left" style="width: 125px;white-space: nowrap;overflow: hidden;padding-left: 3px;"><span>{{ c.name }}</span></div>
+        <a v-if="filteredLanguages.length == 0">
+        <div class="language-item">
+             <div  class="text-center"><span>No result found.</span></div>
+        </div>
+        </a>
+
+      <a v-for="(c,i) in filteredLanguages" v-on:click="onLanguageChange(c.code,c.name,c.nativeName,c.countries)">
+        <div  class="float-left lang-item">
+            <span v-if="displayText=='name'"> {{c.name}}</span>
+            <span v-if="displayText=='native'">{{c.nativeName}}</span>
+        </div>
 
          <div class="right-container">
-            <div v-on:click="scrollLeft(i)" class="scroll-btn float-left"><!-- &#60; -->«</div>
+            <div v-on:click="scrollLeft(i)" class="scroll-btn float-left">«</div>
 
         <div class="wrapper-box" v-bind:class="'wrapper-box-'+i">
           <span v-for="f in c.countries" class="mr-5"><i v-bind:class="'flag flag-'+f"></i></span>
         </div>
 
-         <div v-on:click="scrollRight(i)" class="scroll-btn float-right"><!-- &#62; -->»</div>
+         <div v-on:click="scrollRight(i)" class="scroll-btn float-right">»</div>
 
        </div>
 
@@ -46,6 +59,18 @@
       selected: {
         type: String,
         required: true
+      },
+      btnBgColor :{
+        type : String,
+        default : '#ed4c46'
+      },
+      btnFontColor:{
+        type : String,
+        default : '#fff'
+      },
+      displayText : {
+        type : String,
+        default : 'name'
       }
     },
     mounted()
@@ -59,13 +84,20 @@
         selectedLang : 'English',
         search       : '',
         isOpen       : false,
-        selectFlag   : 'gb',
+        selectFlag   : 'pk',
         languages    : jsonfile
       }
 
     },
     computed:
     {
+      mapCustomCss ()
+      {
+        return{
+          'background-color' : this.btnBgColor,
+          'color' : this.btnFontColor
+        }
+      },
       filteredLanguages:function()
       {
         let self = this;
@@ -80,7 +112,7 @@
     methods: {
       onLanguageChange: function (code,name,native,countries) 
       {
-        let data          = { 'code' : code, 'name' : name, 'native' : native};
+        let data          = { 'code' : code, 'name' : name, 'native' : native, 'countries' : countries};
         this.selectedLang = name;    
         this.$emit('change', data);
         this.hide();

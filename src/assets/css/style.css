@@ -73,11 +73,29 @@
   display: block;
   border-bottom: 1px solid #ddd; 
   cursor: pointer; 
+  width: 100%
+}
+.lang-item
+{
+  width: 125px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 3px;
+  text-overflow: ellipsis;
+  text-align: left;
 }
 
 .dropdown a:hover 
 {
   background-color: #ddd;
+}
+
+.selected-lang-text
+{
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .show 
@@ -156,9 +174,10 @@
 }
 .right-container
 {
-  width: 87px;float: right;margin-left: 5px;
+  width: 87px;
+  float: right;
+  margin-left: 5px;
 }
-
 .mr-5
 {
   margin-right: 5px;
