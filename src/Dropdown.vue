@@ -50,7 +50,7 @@
   import jsonfile from './data/languages.json';
   
   export default {
-    name     : "language-dropdown",
+    name     : "LanguageDropdown",
     props: {
       showSearchInput :{
         type    : Boolean,
@@ -70,7 +70,14 @@
       },
       displayText : {
         type : String,
-        default : 'name'
+        default : 'name',
+        validator(text) {
+          return ['name', 'native'].includes(text);
+        },
+      },
+      selectedLanguages : {
+        type : Array,
+        default : ()=> []
       }
     },
     mounted()
@@ -98,10 +105,18 @@
           'color' : this.btnFontColor
         }
       },
+      getOnlySelectedLanguages : function()
+      {
+        var self = this;
+        return this.languages.filter(function(lang){
+           return lang.code == self.selectedLanguages[self.selectedLanguages.indexOf(lang.code)]
+        })
+      },
       filteredLanguages:function()
       {
         let self = this;
-        return this.languages.filter(function(lang){
+        let data = this.getOnlySelectedLanguages.length > 0 ? this.getOnlySelectedLanguages : this.languages;
+        return data.filter(function(lang){
           return (
            lang.code.toLowerCase().indexOf(self.search.toLowerCase())>=0
            || lang.name.toLowerCase().indexOf(self.search.toLowerCase())>=0
@@ -110,6 +125,7 @@
       }
     },
     methods: {
+
       onLanguageChange: function (code,name,native,countries) 
       {
         let data          = { 'code' : code, 'name' : name, 'native' : native, 'countries' : countries};

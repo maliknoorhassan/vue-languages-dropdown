@@ -9,8 +9,10 @@
 
 ## Installation
 
-``` bash
+```bash
 npm install vue-languages-dropdown --save
+
+yarn add vue-languages-dropdown
 ```
 
 ## Usage
@@ -21,12 +23,13 @@ Vue.use(LanguageDropdown);
 var app = new Vue({
     el: '#app',
     data: {
-      selectedLang : "en"
+      selectedLang : "en",
+      selectedList : ['en','ur','ar']
     },
     methods: {
     	optionSelected: function (data) {
           
-          console.log(data)
+         console.log(data)
       }
     }
 });
@@ -34,17 +37,18 @@ var app = new Vue({
 
 # Html
 ```html
-<language-dropdown selected="ur" v-on:change="optionSelected"></language-dropdown>
+<language-dropdown selected="ur" :selected-languages="selectedList" v-on:change="optionSelected"></language-dropdown>
 ```
 
-# API
+# Props
 | Name | Type | Default | Description
 |-----|:----------|:------|:----------
 | selected          | String  | ur | Language ISO2 code, to show default selected language 
 | show-search-input | Boolean | true | true or false value to show the search input in the dropdown 
 | btn-bg-color      | String  | #ed4c46 | hex color code for the top button background
 | btn-font-color    | String  | #fff | hex color code for the top button font color
-| display-text      | String  | name | pass 'name' or 'native' value to show in the list, if pass 'native' language list will be displayed in native format
+| display-text      | String  | name | pass `name` or `native` value to show in the list, if you pass the `native`; languages list will be displayed in native text.
+| selected-languages | Array | All world languages | If you don't want to display all languages and want to display only required languages then you can use this prop. Pass the ISO2 LANGUAGE code (*not country ISO2 Code*) in an array. Example is given in code snippet.
 
 # Methods
 
@@ -55,7 +59,7 @@ v-on:change="yourMethodName"
 ```
 as shown in above example.
 
-You will receive the following data in emit.
+You will receive the following data on language change event.
 
 | Name |  Description
 |-----|:----------
@@ -64,3 +68,8 @@ You will receive the following data in emit.
 | native | Language name in native language text
 | countries | An array of containing ISO2 codes of countries in which selected language is spoken 
 
+
+# Credits & Highlights
+
+The flags sprite image and css taken from
+[flag-sprite.com](https://www.flag-sprites.com/)

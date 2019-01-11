@@ -1,33 +1,30 @@
 {
   "name": "vue-languages-dropdown",
   "description": "Vue Languages dropdown component with search functionality",
-  "version": "1.0.12",
-  "author": {
+  "version": "1.0.13",
+ "author": {
     "name": "Malik Noor Hassan",
     "email": "maliknoorhassan@outook.com",
-    "url": "https://github.com/maliknoorhassan"
+    "url" : "https://github.com/maliknoorhassan"
   },
   "license": "MIT",
-  "main": "src/main.js",
+  "main": "dist/build.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "keywords": [
-    "vue",
-    "vue-language",
-    "language-dropdown",
-    "locale-dropdown",
-    "vue-locale-dropdown"
+  "keywords" :[
+    "vue", "dropdown", "language-dropdown", "locale-dropdown", "vue-locale-dropdown"
   ],
   "dependencies": {
-    "vue": "^2.5.21"
+    "vue": "^2.5.11"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/maliknoorhassan/vue-languages-dropdown",
-    "issues": "https://github.com/maliknoorhassan/vue-languages-dropdown/issues"
+    "issues" : "https://github.com/maliknoorhassan/vue-languages-dropdown/issues"
   },
+
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -41,9 +38,9 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
-    "vue-loader": "^13.7.3",
-    "vue-template-compiler": "^2.5.21",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.11.3"
+    "webpack-dev-server": "^2.9.1"
   }
 }
