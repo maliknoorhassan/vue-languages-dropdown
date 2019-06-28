@@ -2,6 +2,7 @@
 
 > Vue2 Languages dropdown component with search functionality
 
+[![npm version](https://badge.fury.io/js/vue-languages-dropdown.svg)](https://badge.fury.io/js/vue-languages-dropdown)
 
 ![alt text](https://raw.githubusercontent.com/maliknoorhassan/vue-languages-dropdown/master/src/assets/images/sample-screenshot-1.png "World Languages Dropdown")
 
@@ -27,8 +28,7 @@ var app = new Vue({
       selectedList : ['en','ur','ar']
     },
     methods: {
-    	optionSelected: function (data) {
-          
+    	optionSelected: function (data) {        
          console.log(data)
       }
     }

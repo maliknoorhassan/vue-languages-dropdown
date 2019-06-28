@@ -1,4 +1,4 @@
-import DropDown from "./Dropdown.vue";
+import LanguageDropdown from "./LanguageDropdown.vue";
 
 const VuePlugin = {
     install: function (Vue) {
@@ -6,7 +6,7 @@ const VuePlugin = {
             return;
         }
         VuePlugin.installed = true;
-        Vue.component(DropDown.name, DropDown);
+        Vue.component('language-dropdown', LanguageDropdown);
     }
 };
 
