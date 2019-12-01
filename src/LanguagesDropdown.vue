@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="languages-dropdown-container">
   
      <div class="dropdown">
     <button v-on:click="toggle" class="dropbtn" :style="mapCustomCss">
@@ -50,7 +50,7 @@
   import jsonfile from './data/languages.json';
   
   export default {
-    name     : "LanguageDropdown",
+    name     : "LanguagesDropdown",
     props: {
       showSearchInput :{
         type    : Boolean,
@@ -159,7 +159,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 @import './assets/css/style.css';
 @import './assets/css/flags.min.css';
 </style>

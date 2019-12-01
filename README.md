@@ -18,11 +18,13 @@ yarn add vue-languages-dropdown
 
 ## Usage
 ```javascript
-import LanguageDropdown from 'vue-languages-dropdown'
-Vue.use(LanguageDropdown);
+import LanguagesDropdown from 'vue-languages-dropdown'
 
 var app = new Vue({
     el: '#app',
+    components:{
+      'languages-dropdown' : LanguagesDropdown
+    },
     data: {
       selectedLang : "en",
       selectedList : ['en','ur','ar']
@@ -37,7 +39,7 @@ var app = new Vue({
 
 # Html
 ```html
-<language-dropdown selected="ur" :selected-languages="selectedList" v-on:change="optionSelected"></language-dropdown>
+<languages-dropdown selected="ur" :selected-languages="selectedList" v-on:change="optionSelected"></languages-dropdown>
 ```
 
 # Props
