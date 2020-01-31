@@ -78,12 +78,16 @@
       selectedLanguages : {
         type : Array,
         default : ()=> []
+      },
+      showSelectedNative : {
+        type    : Boolean,
+        default : false
       }
     },
     mounted()
     {
       let index         = this.languages.map(function (lang) { return lang.code; }).indexOf(this.selected.toLowerCase());
-      let userIsoCode   = this.languages[index]['name'];    
+      let userIsoCode   = this.showSelectedNative ? this.languages[index]['nativeName'] : this.languages[index]['name'];    
       this.selectedLang = userIsoCode;
       this.selectFlag   = this.languages[index]['countries'][0];
     },
@@ -130,7 +134,7 @@
       onLanguageChange: function (code,name,native,countries) 
       {
         let data          = { 'code' : code, 'name' : name, 'native' : native, 'countries' : countries};
-        this.selectedLang = name;    
+        this.selectedLang = this.showSelectedNative ? native : name;    
         this.$emit('change', data);
         this.hide();
         this.setFlag(countries[0]);
