@@ -32,6 +32,7 @@
         "name": "Arabic",
         "nativeName": "العربية",
         "countries": [
+            "sa",
             "ae",
             "bh",
             "dj",
@@ -50,7 +51,6 @@
             "om",
             "ps",
             "qa",
-            "sa",
             "sd",
             "so",
             "sy",
@@ -462,7 +462,7 @@
         "nativeName": " हिन्दी, हिंदी",
         "countries": [
             "in",
-            "fj",
+            "fj"
         ]
 
     },
