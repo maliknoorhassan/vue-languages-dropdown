@@ -85,13 +85,14 @@
       let index         = this.languages.map(function (lang) { return lang.code; }).indexOf(this.selected.toLowerCase());
       let userIsoCode   = this.languages[index]['name'];    
       this.selectedLang = userIsoCode;
+      this.selectFlag   = this.languages[index]['countries'][0];
     },
     data: function() {
       return {
         selectedLang : 'English',
         search       : '',
         isOpen       : false,
-        selectFlag   : 'pk',
+        selectFlag   : 'gb',
         languages    : jsonfile
       }
 
