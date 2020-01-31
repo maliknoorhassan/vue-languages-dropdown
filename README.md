@@ -51,6 +51,7 @@ var app = new Vue({
 | btn-font-color    | String  | #fff | hex color code for the top button font color
 | display-text      | String  | name | pass `name` or `native` value to show in the list, if you pass the `native`; languages list will be displayed in native text.
 | selected-languages | Array | All world languages | If you don't want to display all languages and want to display only required languages then you can use this prop. Pass the ISO2 LANGUAGE code (*not country ISO2 Code*) in an array. Example is given in code snippet.
+| show-selected-native | Boolean | false | Display the selected language in top bar in `native` language if passed true
 
 # Methods
 
